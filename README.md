@@ -1,6 +1,6 @@
 # poppler-utils
 
-A [Docker](http://docker.com) file to build [poppler-utils](https://github.com/poppler-utils).
+A [Docker](http://docker.com) file to build [poppler-utils](https://poppler.freedesktop.org/) a PDF rendering library based on the xpdf-3.0 code base.
 
 > Be aware! You should carefully read the usage documentation of every tool!
 
@@ -24,7 +24,7 @@ This image has been builded using [buildx](https://docs.docker.com/buildx/workin
 ### Start container
 
 ```bash
-docker run -it --rm elswork/poppler-utils \
+docker run -it --rm -v $(pwd):/data elswork/poppler-utils \
  someparameter
 ```
 or
