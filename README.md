@@ -25,11 +25,61 @@ This image has been builded using [buildx](https://docs.docker.com/buildx/workin
 
 ```bash
 docker run -it --rm -v $(pwd):/data elswork/poppler-utils \
- someparameter
+ somecommand
 ```
 or
 ```bash
-make start someparameter
+make start somecommand
+```
+These are the available commands:
+
+- pdffonts show the list of fonts of the PDF file.
+
+```bash
+docker run -it --rm -v $(pwd):/data elswork/poppler-utils \
+pdffonts elswork_poppler-utils.pdf
+```
+- pdfimages extract and list the images of the PDF file.
+
+```bash
+docker run -it --rm -v $(pwd):/data elswork/poppler-utils \
+pdfimages -list elswork_poppler-utils.pdf
+```
+- pdfinfo extract info from the PDF file.
+
+```bash
+docker run -it --rm -v $(pwd):/data elswork/poppler-utils \
+pdfinfo elswork_poppler-utils.pdf
+```
+- pdfseparate separate the PDF file.
+
+```bash
+docker run -it --rm -v $(pwd):/data elswork/poppler-utils \
+pdfseparate elswork_poppler-utils.pdf separated%d.pdf
+```
+- pdftocairo convert PDF file into images.
+
+```bash
+docker run -it --rm -v $(pwd):/data elswork/poppler-utils \
+pdftocairo -png elswork_poppler-utils.pdf
+```
+- pdftohtml convert PDF file into html files.
+
+```bash
+docker run -it --rm -v $(pwd):/data elswork/poppler-utils \
+pdftohtml elswork_poppler-utils.pdf
+```
+- pdftotext convert PDF file into text file.
+
+```bash
+docker run -it --rm -v $(pwd):/data elswork/poppler-utils \
+pdftotext elswork_poppler-utils.pdf
+```
+- pdfunite join PDF files in one file.
+
+```bash
+docker run -it --rm -v $(pwd):/data elswork/poppler-utils \
+pdfunite file1.pdf file2.pdf joined.pdf
 ```
 ---
 **[Sponsor me!](https://github.com/sponsors/elswork) Together we will be unstoppable.**
